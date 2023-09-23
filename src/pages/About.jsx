@@ -1,17 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 
-
 function About(props) {
+  const about = useLoaderData();
 
-  const about = useLoaderData()
-
-  return <div>
-      {/* <h1>{about.name}</h1> */}
-      {/* <h2 style={{textTransform:'uppercase'}}>{about.title}</h2> */}
-      {/* <h3>{about.email}</h3> */}
-      <p>{about.bio}</p>
-      <img src={about.headshot} alt="Your Headshot"/>
+  return (
+    <div>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'center' }}>
+        <img
+          src={process.env.PUBLIC_URL + '/images/Headshot.png'} alt="Karla Lazarte Headshot"
+          style={{width:'300px', height:'300px', marginRight:'8px', marginTop:'10px'}}/>
+        <p>{about.bio}</p>
+      </div>
     </div>
+  );
 }
 
 export default About;
